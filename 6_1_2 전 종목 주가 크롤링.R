@@ -19,13 +19,13 @@ biz_day = GET(url) %>%
 
 
 
-KOR_ticker = read.csv('data/table.csv', row.names = 1)
+KOR_ticker = read.csv('C:/dongwoon.kang/00_Git/Crawling-stock-data/data/table.csv', row.names = 1)
 print(KOR_ticker$'종목코드'[1])
 KOR_ticker$'종목코드' =
   str_pad(KOR_ticker$'종목코드', 6, side = c('left'), pad = '0')
 
-ifelse(dir.exists('data/KOR_price'), FALSE,
-       dir.create('data/KOR_price'))
+ifelse(dir.exists('C:/dongwoon.kang/00_Git/Crawling-stock-data/data/KOR_price'), FALSE,
+       dir.create('C:/dongwoon.kang/00_Git/Crawling-stock-data/data/KOR_price'))
 
 for(i in 1 : nrow(KOR_ticker) ) {
   
@@ -65,7 +65,7 @@ for(i in 1 : nrow(KOR_ticker) ) {
   })
   
   # 다운로드 받은 파일을 생성한 폴더 내 csv 파일로 저장
-  write.csv(price, paste0('data/KOR_price/', name,
+  write.csv(price, paste0('C:/dongwoon.kang/00_Git/Crawling-stock-data/data/KOR_price/', name,
                           '_price.csv'))
   
   # 타임슬립 적용

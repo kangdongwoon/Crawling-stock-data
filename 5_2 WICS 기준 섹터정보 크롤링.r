@@ -45,5 +45,5 @@ for (i in sector_code) {
 data_sector = do.call(rbind, data_sector)
 
 
-write.csv(data_sector, 'data/KOR_sector.csv')
+write.csv(data_sector, 'C:/dongwoon.kang/00_Git/Crawling-stock-data/data/KOR_sector.csv')
 
