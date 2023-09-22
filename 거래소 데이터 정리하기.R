@@ -63,7 +63,7 @@ down_sector = rbind(down_sector_KS, down_sector_KQ)
 #generate csv
 ifelse(dir.exists('data'), FALSE, dir.create('data'))
 write.csv(down_sector, 'C:/dongwoon.kang/00_Git/Crawling-stock-data/data/krx_sector.csv'
-          , row.names = F, fileEncoding = "cp949")
+          , row.names = T, fileEncoding = "cp949")
 # write.csv(down_sector, 'C:/dongwoon.kang/00_Git/Crawling-stock-data/data/krx_sector.csv')
 #########################################################################################################
 # 개별종목 지표 OTP 발급
@@ -91,7 +91,7 @@ down_ind = POST(down_url, query = list(code = otp),
 
 # write.csv(down_ind, 'C:/dongwoon.kang/00_Git/Crawling-stock-data/data/krx_ind.csv')
 write.csv(down_ind, 'C:/dongwoon.kang/00_Git/Crawling-stock-data/data/krx_ind.csv'
-          , row.names = F, fileEncoding = "cp949")
+          , row.names = T, fileEncoding = "cp949")
 #####################################################################
 
 # First row is stringsAsFactors, because it is names of each column
